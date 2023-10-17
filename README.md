@@ -10,6 +10,7 @@ for project 4
 a simple platformer in 2d Godot
 
 ## Implementation
+built with Godot 4.1
 sprite given by jason francis
 
 ## What Makes this a Game?
