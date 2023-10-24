@@ -38,3 +38,13 @@ func _physics_process(delta):
 	
 
 	move_and_slide()
+
+
+
+func _on_level_1_body_entered(body):
+	get_tree().change_scene_to_file("res://levels/level1.tscn")
+
+
+
+func _on_level_2_body_entered(body):
+	get_tree().change_scene_to_file("res://levels/level2.tscn")
