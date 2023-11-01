@@ -19,6 +19,13 @@ https://www.kenney.nl/assets/background-elements-redux
 pixel platformer redux by kenny.nl
 https://www.kenney.nl/assets/platformer-art-pixel-redux
 
+ghost enemy by pop shop packs
+https://pop-shop-packs.itch.io/ghost-pixel-asset-pack?download
+
+bat enemy sprite by kimbulworks
+
+https://kimbulworks.itch.io/bat?download
+
 ## What Makes this a Game?
 
 2d platfomer aespects
@@ -27,8 +34,9 @@ https://www.kenney.nl/assets/platformer-art-pixel-redux
 
 ## Future Development
 
-want to add my own animated sprite
+
 will add another level and polish it more later
+will try to add enemy movemt, for now im more adding the enemies as obstecals and the bat has a jump on top hit box and it kills them
 
 ## Created by
 
