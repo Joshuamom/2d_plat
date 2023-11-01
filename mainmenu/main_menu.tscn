@@ -1,0 +1,161 @@
+[gd_scene load_steps=9 format=3 uid="uid://csx03uqwkfrel"]
+
+[ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_012ac"]
+[ext_resource type="FontFile" uid="uid://vs1ggehkh07m" path="res://Assets/Sunday Mango.ttf" id="2_xsedf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37exm"]
+bg_color = Color(0.776471, 0.419608, 0.243137, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 0.352941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwsgv"]
+bg_color = Color(0.776471, 0.419608, 0.243137, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.984314, 0.678431, 0.666667, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 0.352941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8ak7"]
+bg_color = Color(0.654902, 0.341176, 0.180392, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 0.352941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrqce"]
+bg_color = Color(0.776471, 0.34902, 0.113725, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 0.352941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0vfu"]
+bg_color = Color(0.635294, 0.32549, 0.172549, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+shadow_color = Color(0, 0, 0, 0.352941)
+
+[sub_resource type="Theme" id="Theme_d5ebq"]
+Button/fonts/font = ExtResource("2_xsedf")
+Button/styles/disabled = SubResource("StyleBoxFlat_37exm")
+Button/styles/focus = SubResource("StyleBoxFlat_nwsgv")
+Button/styles/hover = SubResource("StyleBoxFlat_h8ak7")
+Button/styles/normal = SubResource("StyleBoxFlat_qrqce")
+Button/styles/pressed = SubResource("StyleBoxFlat_c0vfu")
+
+[node name="main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 10
+script = ExtResource("1_012ac")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -2.0
+offset_top = -43.0
+offset_right = 1161.0
+offset_bottom = 651.0
+size_flags_horizontal = 3
+
+[node name="play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = 52.0
+offset_right = 81.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_d5ebq")
+text = "Play"
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 1
+offset_left = -80.0
+offset_top = 111.0
+offset_right = 78.0
+offset_bottom = 142.0
+size_flags_horizontal = 4
+theme = SubResource("Theme_d5ebq")
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -528.0
+offset_top = -198.0
+offset_right = 528.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_xsedf")
+text = "mewo's Adventure"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
