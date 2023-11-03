@@ -1,10 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://bkcuj8xu6bity"]
+[gd_scene load_steps=16 format=3 uid="uid://bkcuj8xu6bity"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_dljxt"]
 [ext_resource type="Texture2D" uid="uid://d3h4l8ekm2irn" path="res://Assets/backgroundEmpty.png" id="1_foewg"]
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_hyiog"]
 [ext_resource type="Texture2D" uid="uid://1djygixijxfr" path="res://Assets/tilemap_packed.png" id="2_48wi4"]
-[ext_resource type="Texture2D" uid="uid://d2wf48m0b2wde" path="res://Assets/cat.png" id="5_3e4hb"]
+[ext_resource type="PackedScene" uid="uid://cwoi2g3ug64ky" path="res://Player/player.tscn" id="4_llk57"]
 [ext_resource type="Texture2D" uid="uid://67e5y2k8oreh" path="res://icon.svg" id="6_8ntdv"]
 [ext_resource type="Script" path="res://Coins.gd" id="7_3mmld"]
 [ext_resource type="Script" path="res://UI/HUD.gd" id="8_2hda6"]
@@ -1752,102 +1751,6 @@ texture_region_size = Vector2i(21, 21)
 
 [sub_resource type="TileSet" id="TileSet_isdso"]
 sources/0 = SubResource("TileSetAtlasSource_m4jif")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbslr"]
-atlas = ExtResource("5_3e4hb")
-region = Rect2(288, 70, 32, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v0q2t"]
-atlas = ExtResource("5_3e4hb")
-region = Rect2(0, 280, 32, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_en8gy"]
-atlas = ExtResource("5_3e4hb")
-region = Rect2(0, 0, 32, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5vpa"]
-atlas = ExtResource("5_3e4hb")
-region = Rect2(224, 70, 32, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbpvb"]
-atlas = ExtResource("5_3e4hb")
-region = Rect2(256, 70, 32, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pqns5"]
-atlas = ExtResource("5_3e4hb")
-region = Rect2(288, 70, 32, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nhak8"]
-atlas = ExtResource("5_3e4hb")
-region = Rect2(32, 0, 32, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wywan"]
-atlas = ExtResource("5_3e4hb")
-region = Rect2(64, 0, 32, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wn5v1"]
-atlas = ExtResource("5_3e4hb")
-region = Rect2(96, 0, 32, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4g2u"]
-atlas = ExtResource("5_3e4hb")
-region = Rect2(128, 0, 32, 70)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ib061"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbslr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v0q2t")
-}],
-"loop": false,
-"name": &"fall",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_en8gy")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l5vpa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wbpvb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pqns5")
-}],
-"loop": false,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nhak8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wywan")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wn5v1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o4g2u")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwl31"]
-size = Vector2(27, 33)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idrdr"]
 texture = ExtResource("2_48wi4")
@@ -7079,22 +6982,7 @@ tile_set = SubResource("TileSet_isdso")
 format = 2
 layer_0/tile_data = PackedInt32Array(2293767, 851968, 24, 2228231, 851968, 24, 2162695, 851968, 23, 1114128, 655360, 28, 1179664, 655360, 28, 1114131, 655360, 28, 1179667, 655360, 28, 1114134, 655360, 28, 1179670, 655360, 28, 1310736, 655360, 28, 1376272, 655360, 28, 1310739, 655360, 28, 1376275, 655360, 28, 1310742, 655360, 28, 1376278, 655360, 28, 1507344, 655360, 28, 1572880, 655360, 28, 1703952, 655360, 28, 1769488, 655360, 28, 1900560, 655360, 28, 1966096, 655360, 28, 1507347, 655360, 28, 1572883, 655360, 28, 1507350, 655360, 28, 1572886, 655360, 28, 1703955, 655360, 28, 1769491, 655360, 28, 1703958, 655360, 28, 1769494, 655360, 28, 1900563, 655360, 28, 1966099, 655360, 28, 1900566, 655360, 28, 1966102, 655360, 28, 2162704, 589824, 24, 2097170, 589824, 24, 1900561, 589824, 24, 1703956, 589824, 24, 1572881, 589824, 24, 1310741, 589824, 24, 2228245, 589824, 24, 2097174, 589824, 24, 1245201, 589824, 24, 1114133, 589824, 24, 2162715, 589824, 26, 2031645, 589824, 26, 1900571, 589824, 26, 1703963, 589824, 26, 1572893, 589824, 26, 1310748, 589824, 26, 1179675, 65536, 24, 1835037, 589824, 26, 2162717, 589824, 26, 1507364, 655360, 29, 1703974, 655360, 29, 1966116, 655360, 29, 2228262, 655360, 29, 1900580, 655360, 27, 1638438, 655360, 27, 1441828, 655360, 27, 2162726, 655360, 27, 1572907, 655360, 27, 1572910, 655360, 27, 1769515, 655360, 27, 1769518, 655360, 27, 1966123, 655360, 27, 1966126, 655360, 27, 2162731, 655360, 27, 2162734, 655360, 27, 1638443, 655360, 29, 1638446, 655360, 29, 1835051, 655360, 29, 1835054, 655360, 29, 2031659, 655360, 29, 2031662, 655360, 29, 2228267, 655360, 29, 2228270, 655360, 29, 2097177, 0, 24, 1769497, 0, 24, 1310745, 0, 24, 1310746, 65536, 23, 1310747, 65536, 23, 1507357, 65536, 23, 1769498, 65536, 23, 1966109, 65536, 23, 1966110, 65536, 23, 2097178, 65536, 23, 2097180, 65536, 23, 2097179, 65536, 23, 2097181, 65536, 23, 2097182, 131072, 23, 1507358, 131072, 23, 1179674, 65536, 24, 1179676, 65536, 24, 1179677, 65536, 24, 2228250, 786432, 24, 2162714, 655360, 23, 2228243, 786432, 24, 2162707, 655360, 23)
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(88, 31)
-script = ExtResource("1_hyiog")
-metadata/_edit_group_ = true
-
-[node name="Sprite" type="AnimatedSprite2D" parent="Player"]
-sprite_frames = SubResource("SpriteFrames_ib061")
-animation = &"fall"
-autoplay = "jump"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-2.5, 12.5)
-shape = SubResource("RectangleShape2D_mwl31")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -4)
+[node name="Player" parent="." instance=ExtResource("4_llk57")]
 
 [node name="platform" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wimhx")
@@ -7123,22 +7011,17 @@ polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -6
 [node name="Coins" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_v1s3o")
 format = 2
-layer_0/tile_data = PackedInt32Array(393224, 1048576, 12, 786436, 1048576, 12, 983052, 1048576, 12, 1114119, 1048576, 12, 1048608, 1048576, 12, 1703953, 1048576, 12, 1703942, 1048576, 12, 1376288, 1048576, 12, 1179664, 1048576, 12, 1310760, 983040, 9, 1310763, 983040, 9, 1310767, 983040, 9, 917558, 983040, 9, 1376311, 983040, 9, 1048639, 983040, 9)
+layer_0/tile_data = PackedInt32Array(393224, 1048576, 12, 786436, 1048576, 12, 983052, 1048576, 12, 1114119, 1048576, 12, 1048608, 1048576, 12, 1703953, 1048576, 12, 1703942, 1048576, 12, 1376288, 1048576, 12, 1179664, 1048576, 12, 1310760, 1048576, 12, 1310763, 1048576, 12, 1310767, 1048576, 12, 917558, 1048576, 12, 1376311, 1048576, 12, 1048639, 1048576, 12)
 script = ExtResource("7_3mmld")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -488.0
-offset_top = -293.0
-offset_right = 661.0
-offset_bottom = 344.0
-script = ExtResource("8_2hda6")
+[node name="can" type="CanvasLayer" parent="."]
 
-[node name="Score" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 133.0
-offset_bottom = 23.0
+[node name="Score" type="Label" parent="can"]
+top_level = true
+offset_right = 244.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Score: "
 
-[connection signal="body_entered" from="level1" to="Player" method="_on_level_1_body_entered"]
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("8_2hda6")

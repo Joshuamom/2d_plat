@@ -48,6 +48,7 @@ func _physics_process(delta):
 
 
 func _on_coin_collector_body_entered(body):
+	print("hi")
 	if body.name == "Coins":
 		body.get_coin(global_position)
 		queue_free()
@@ -60,5 +61,6 @@ func _on_level_1_body_entered(body):
 
 
 
-func _on_level_2_body_entered(body):
-	get_tree().change_scene_to_file("res://levels/level2.tscn")
+func _on_coin_collector_area_entered(area):
+	print("it's the area collider")
+	pass # Replace with function body.
