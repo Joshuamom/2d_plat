@@ -36,4 +36,10 @@ func _on_attack_body_entered(body):
 
 func _on_bonk_body_entered(body):
 	if body.name == "Player":
-		queue_free()
+		$AnimatedSprite2D.play("death")
+		
+
+
+
+func _on_animated_sprite_2d_animation_finished():
+	queue_free()
