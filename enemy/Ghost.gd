@@ -6,7 +6,7 @@ var face_right = false
 var move = 100
 
 func _ready():
-	pass
+	$AnimatedSprite2D.play("idle")
 
 
 func _physics_process(delta):

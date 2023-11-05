@@ -2,16 +2,19 @@ extends Node
 
 var Score = 0
 
+
 func Update_Score(s):
 	Score += s
-	var hud = get_node_or_null("/root/game/can")
+	var hud = get_node_or_null("/root/Game/can/Score")
 	if hud != null:
-		hud.Update_Score()
+		hud.text = "Score: " + str(Score)
+	else:
+		print("o")
 	
 
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
-			var menu = get_node_or_null("/root/game/UI/pause")
+			var menu = get_node_or_null("/root/Game/UI/pause")
 			if menu == null:
 				get_tree().quit()
 			else:
@@ -21,3 +24,4 @@ func _process(_delta):
 				else:
 					get_tree().paused = true
 					menu.show()
+

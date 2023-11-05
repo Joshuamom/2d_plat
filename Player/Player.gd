@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var push = 80
+var Score = 0
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -42,16 +44,20 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+func bounce():
+	velocity.y = JUMP_VELOCITY * 0.8
+	
 	
 
 	
 
 
 func _on_coin_collector_body_entered(body):
-	print("hi")
 	if body.name == "Coins":
 		body.get_coin(global_position)
-		queue_free()
+		Global.Update_Score(1)
+		
+			
 
 
 

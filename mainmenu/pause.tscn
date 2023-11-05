@@ -12,6 +12,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t0b6n")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 654.0
+
 [node name="retry" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
