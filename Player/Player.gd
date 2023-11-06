@@ -5,7 +5,6 @@ const JUMP_VELOCITY = -500.0
 var push = 80
 var Score = 0
 
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -24,8 +23,11 @@ func _physics_process(delta):
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		$jump_sound.play()
 		$Sprite.play("jump")
 		velocity.y = JUMP_VELOCITY
+		
+
 		
 
 	# Get the input direction and handle the movement/deceleration.
@@ -45,15 +47,13 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func bounce():
-	velocity.y = JUMP_VELOCITY * 0.8
-	
-	
-
-	
+	velocity.y = JUMP_VELOCITY * 2
+	$death.play()
 
 
 func _on_coin_collector_body_entered(body):
 	if body.name == "Coins":
+		$coin.play()
 		body.get_coin(global_position)
 		Global.Update_Score(1)
 		
@@ -63,6 +63,10 @@ func _on_coin_collector_body_entered(body):
 
 func _on_level_1_body_entered(body):
 	get_tree().change_scene_to_file("res://levels/level1.tscn")
+	
+func _on_to_3_body_entered(body):
+	get_tree().change_scene_to_file("res://levels/level2.tscn")
+
 
 
 
@@ -70,3 +74,5 @@ func _on_level_1_body_entered(body):
 func _on_coin_collector_area_entered(area):
 	print("it's the area collider")
 	pass # Replace with function body.
+
+

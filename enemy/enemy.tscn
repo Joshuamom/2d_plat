@@ -1,8 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://ccrpm16se25ww"]
+[gd_scene load_steps=32 format=3 uid="uid://ccrpm16se25ww"]
 
 [ext_resource type="Texture2D" uid="uid://gxjsehfidubt" path="res://Assets/Bat Death-Sheet.png" id="1_tyhkv"]
 [ext_resource type="Script" path="res://enemy/bat.gd" id="1_wwxv2"]
 [ext_resource type="Texture2D" uid="uid://cw2anfccygxxf" path="res://Assets/Bat Move-Sheet.png" id="2_uq0d6"]
+[ext_resource type="AudioStream" uid="uid://mxnn74xe3qvs" path="res://547854__sieuamthanh__trungquat2.wav" id="4_j2d38"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f3agf"]
 atlas = ExtResource("1_tyhkv")
@@ -179,25 +180,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7g0yc"]
-size = Vector2(36, 30)
+size = Vector2(53, 19)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qd082"]
-radius = 25.02
+radius = 10.198
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdt58"]
-size = Vector2(52, 14.5)
+size = Vector2(71, 9.25)
 
 [node name="bat" type="CharacterBody2D"]
 script = ExtResource("1_wwxv2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2g253")
-animation = &"moving"
-frame = 10
-frame_progress = 0.75278
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 3)
+position = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_7g0yc")
 
 [node name="see" type="RayCast2D" parent="."]
@@ -206,7 +205,6 @@ target_position = Vector2(0, 19)
 [node name="Attack" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
-visible = false
 position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_qd082")
 
@@ -215,8 +213,14 @@ shape = SubResource("CircleShape2D_qd082")
 [node name="Bonk" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bonk"]
-position = Vector2(0, -19.75)
+position = Vector2(-0.5, -14.375)
 shape = SubResource("RectangleShape2D_mdt58")
+
+[node name="Death_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_j2d38")
+volume_db = 2.0
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]

@@ -50,10 +50,8 @@ func _physics_process(_delta):
 
 func _on_attack_body_entered(body):
 	if body.name == "Player":
-		player.health -= 1
-		if player.health < 0:
-			player.health = player.maxhealth
-		print_debug(player.health)
+		get_tree().reload_current_scene()
+
 
 
 
@@ -62,6 +60,9 @@ func _on_bonk_body_entered(body):
 		body.bounce()
 		$AnimatedSprite2D.play("death")
 		queue_free()
+		$Death_sound.play()
+
+
 		
 
 
