@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqw44xffthb7g"]
+[gd_scene load_steps=4 format=3 uid="uid://cqw44xffthb7g"]
 
 [ext_resource type="Theme" uid="uid://knkujx4ux6ya" path="res://mainmenu/main_menu.tres" id="1_fee5r"]
+[ext_resource type="Script" path="res://end_menu.gd" id="1_lbp4p"]
 [ext_resource type="FontFile" uid="uid://vs1ggehkh07m" path="res://Assets/Sunday Mango.ttf" id="1_rm0w0"]
 
 [node name="end_menu" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lbp4p")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -54,3 +56,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_fee5r")
 text = "Quit ?"
+
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

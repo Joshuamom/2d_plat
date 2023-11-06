@@ -2665,5 +2665,5 @@ text = "Score: "
 
 [node name="springs" type="Node2D" parent="."]
 
-[node name="spring" parent="springs" instance=ExtResource("4_k7xhr")]
-position = Vector2(280, 341)
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_k7xhr")]
+position = Vector2(264, 343)
