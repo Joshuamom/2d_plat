@@ -11,7 +11,6 @@ a simple platformer in godot
 
 ## Implementation
 built with Godot 4.1
-sprite given by jason francis
 sprites of backgrounds:
 background redux by kenny.nl
 https://www.kenney.nl/assets/background-elements-redux
@@ -38,6 +37,17 @@ bounce sound
 font: sunday mango: kuhrusan
 
 https://www.dafont.com/sunday-mango.font
+
+Tetros Arcade Cabinet by komiku
+https://freemusicarchive.org/music/Komiku/Poupis_incredible_adventures_/Komiku_-_Poupis_incredible_adventures__-_27_Tetros_Arcade_Cabinet/
+
+Day Dreams by HoliznaCC0
+https://freemusicarchive.org/music/holiznacc0/power-pop/day-dreams/
+
+Adventure Begins Loop by HoliznaCC0
+https://freemusicarchive.org/music/holiznacc0/chiptunes/adventure-begins-loop/
+
+
 
 
 ## What Makes this a Game?
