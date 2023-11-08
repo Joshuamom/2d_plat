@@ -7,7 +7,7 @@ var player = null
 var nav_ready = false
 var initial_position = Vector2.ZERO
 var mode = ""
-
+var move = 200
 
 
 var points = []
@@ -25,26 +25,16 @@ func nav_setup():
 	nav_ready = true
 
 func _physics_process(_delta):
-	player = get_node_or_null("/root/Game/Player")
-	var s = looking_speed
-	var points = initial_position
-	if player != null and nav_ready:
-		$NavigationAgent2D.target_position = player.global_position
-		points = $NavigationAgent2D.get_next_path_position()
-		$see.target_position = to_local(player.global_position)
-		var c = $see.get_collider()
-		if c == player:
-			s = speed
-	if points != Vector2.ZERO:
-		print(points)
-		var distance = points - global_position
-		var direction = distance.normalized()
-		$AnimatedSprite2D.flip_h = direction.x < 0
-		if distance.length() > margin:
-			velocity = direction*s
-		else:
-			velocity = Vector2.ZERO
-		move_and_slide()
+	velocity.x = move
+	move_and_slide()
+	
+	if is_on_wall():
+		move = -move
+		
+	if move < 0:
+		$AnimatedSprite2D.flip_h = false
+	elif move > 0:
+		$AnimatedSprite2D.flip_h = true
 		
 
 

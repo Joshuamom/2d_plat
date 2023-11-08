@@ -1,10 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://cwoi2g3ug64ky"]
+[gd_scene load_steps=21 format=3 uid="uid://cwoi2g3ug64ky"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_kmhj4"]
 [ext_resource type="Texture2D" uid="uid://d2wf48m0b2wde" path="res://Assets/cat.png" id="2_l81uj"]
 [ext_resource type="AudioStream" uid="uid://crs6j8tegk8lp" path="res://386658__jalastram__sfx_jump_39.wav" id="3_125cb"]
+[ext_resource type="AudioStream" uid="uid://bs6718kpkb8vb" path="res://Assets/404769__owlstorm__retro-video-game-sfx-bounce.wav" id="3_lpdhi"]
 [ext_resource type="AudioStream" uid="uid://mxnn74xe3qvs" path="res://547854__sieuamthanh__trungquat2.wav" id="4_j8sh3"]
 [ext_resource type="AudioStream" uid="uid://bx8lhqyc15lj2" path="res://146723__leszek_szary__coin-object.wav" id="5_pwbxe"]
+[ext_resource type="AudioStream" uid="uid://so2ah3cbfjvi" path="res://Assets/Komiku - Tetros Arcade Cabinet.mp3" id="7_4168q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbslr"]
 atlas = ExtResource("2_l81uj")
@@ -104,7 +106,7 @@ size = Vector2(21, 29)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3gxb"]
 radius = 19.0
-height = 56.0
+height = 72.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kmhj4")
@@ -126,18 +128,23 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coin_Collector"]
-visible = false
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_a3gxb")
 
 [node name="jump_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_125cb")
+stream = ExtResource("3_lpdhi")
 
 [node name="death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_j8sh3")
 
 [node name="coin" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_pwbxe")
+
+[node name="bounce" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_125cb")
+
+[node name="cave" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_4168q")
 
 [connection signal="area_entered" from="Coin_Collector" to="." method="_on_coin_collector_area_entered"]
 [connection signal="body_entered" from="Coin_Collector" to="." method="_on_coin_collector_body_entered"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c81t6s6mrcpdd"]
+
+[ext_resource type="Script" path="res://spr.gd" id="1_juuhr"]
+[ext_resource type="Texture2D" uid="uid://bricvuch24cme" path="res://Assets/New Piskel (2).png" id="2_m6k2b"]
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_44765"]
+length = 15.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xb6om"]
+size = Vector2(20, 12)
+
+[node name="spr" type="CharacterBody2D"]
+script = ExtResource("1_juuhr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SeparationRayShape2D_44765")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_m6k2b")
+
+[node name="boing" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boing"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_xb6om")
+
+[connection signal="body_shape_entered" from="boing" to="." method="_on_boing_body_shape_entered"]

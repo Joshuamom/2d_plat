@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4sm525qta14r"
+path="res://.godot/imported/Zane Little - Post-Adventure Tea Party.mp3-b9bb5c9484d65539d78e83c540549495.mp3str"
+
+[deps]
+
+source_file="res://Assets/Zane Little - Post-Adventure Tea Party.mp3"
+dest_files=["res://.godot/imported/Zane Little - Post-Adventure Tea Party.mp3-b9bb5c9484d65539d78e83c540549495.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,7 +1,8 @@
 extends Control
 
 
-
+func _ready():
+	$menu.play()
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://game.tscn")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0ucdnwg7egne"
+path="res://.godot/imported/HoliznaCC0 - Adventure Begins Loop.mp3-8dba877ae0c389c64af295f604d3adae.mp3str"
+
+[deps]
+
+source_file="res://Assets/HoliznaCC0 - Adventure Begins Loop.mp3"
+dest_files=["res://.godot/imported/HoliznaCC0 - Adventure Begins Loop.mp3-8dba877ae0c389c64af295f604d3adae.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

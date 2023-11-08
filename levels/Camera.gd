@@ -3,7 +3,7 @@ extends Camera2D
 var player = null
 
 func _ready():
-	pass
+	$cave.play()
 
 func _physics_process(_delta):
 	player = get_node_or_null("/root/Game/Player_Container/Player")

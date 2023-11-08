@@ -48,7 +48,7 @@ func _physics_process(delta):
 	
 func bounce():
 	velocity.y = JUMP_VELOCITY * 2
-	$death.play()
+	$bounce.play()
 
 
 func _on_coin_collector_body_entered(body):
@@ -65,14 +65,13 @@ func _on_level_1_body_entered(body):
 	get_tree().change_scene_to_file("res://levels/level1.tscn")
 	
 func _on_to_3_body_entered(body):
-	get_tree().change_scene_to_file("res://levels/level2.tscn")
+	get_tree().change_scene_to_file("res://levels/fin.tscn")
 
 
 
 
 
 func _on_coin_collector_area_entered(area):
-	print("it's the area collider")
-	pass # Replace with function body.
+	queue_free()
 
 
