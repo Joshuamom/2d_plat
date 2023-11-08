@@ -26,6 +26,20 @@ bat enemy sprite by kimbulworks
 
 https://kimbulworks.itch.io/bat?download
 
+jump sound by: jalastram
+https://freesound.org/people/jalastram/sounds/386658/
+
+coin sound by: lezek szary
+
+https://freesound.org/people/Leszek_Szary/sounds/146723/
+
+bounce sound
+
+font: sunday mango: kuhrusan
+
+https://www.dafont.com/sunday-mango.font
+
+
 ## What Makes this a Game?
 
 2d platfomer aespects
