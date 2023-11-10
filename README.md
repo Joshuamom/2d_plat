@@ -44,6 +44,9 @@ font: sunday mango: kuhrusan
 
 https://www.dafont.com/sunday-mango.font
 
+win music by EVRetro:
+https://freesound.org/people/EVRetro/sounds/495005/
+
 Tetros Arcade Cabinet by komiku
 https://freemusicarchive.org/music/Komiku/Poupis_incredible_adventures_/Komiku_-_Poupis_incredible_adventures__-_27_Tetros_Arcade_Cabinet/
 
