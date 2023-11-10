@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://csx03uqwkfrel"]
+[gd_scene load_steps=6 format=3 uid="uid://csx03uqwkfrel"]
 
 [ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_012ac"]
 [ext_resource type="Theme" uid="uid://knkujx4ux6ya" path="res://mainmenu/main_menu.tres" id="2_gqte5"]
 [ext_resource type="FontFile" uid="uid://vs1ggehkh07m" path="res://Assets/Sunday Mango.ttf" id="2_xsedf"]
 [ext_resource type="AudioStream" uid="uid://d0ucdnwg7egne" path="res://Assets/HoliznaCC0 - Adventure Begins Loop.mp3" id="4_sph1v"]
+[ext_resource type="AudioStream" uid="uid://djuu4ad5yodua" path="res://455202__matrixxx__select-granted-02.wav" id="5_ubpnh"]
 
 [node name="main menu" type="Control"]
 layout_mode = 3
@@ -73,6 +74,9 @@ visible_ratio = 0.0
 [node name="menu" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_sph1v")
 pitch_scale = 1.1
+
+[node name="button" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ubpnh")
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

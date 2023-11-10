@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwi3pw1qe5uw6"]
+[gd_scene load_steps=7 format=3 uid="uid://dwi3pw1qe5uw6"]
 
+[ext_resource type="Script" path="res://enemy/worm.gd" id="1_d5ke8"]
 [ext_resource type="Texture2D" uid="uid://1djygixijxfr" path="res://Assets/tilemap_packed.png" id="1_fbqmt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kmk3h"]
@@ -24,10 +25,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3hs4"]
-size = Vector2(20, 5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_igdt8"]
+radius = 12.0
 
 [node name="worm" type="CharacterBody2D"]
+script = ExtResource("1_d5ke8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6xu11")
@@ -35,5 +37,4 @@ animation = &"idle"
 frame_progress = 0.472106
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_l3hs4")
+shape = SubResource("CircleShape2D_igdt8")

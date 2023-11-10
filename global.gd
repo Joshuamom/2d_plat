@@ -7,9 +7,10 @@ func Update_Score(s):
 	Score += s
 	var hud = get_node_or_null("/root/Game/can/Score")
 	if hud != null:
-		hud.text = "Score: " + str(Score)
+		hud.text = "Score: " + str(Global.Score)
+		print("i")
 	else:
-		print("o")
+		print("0")
 	
 
 func _process(_delta):

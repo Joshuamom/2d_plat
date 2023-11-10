@@ -1,15 +1,18 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -450.0
 var push = 80
 var Score = 0
+var max_jump = 1
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -26,6 +29,9 @@ func _physics_process(delta):
 		$jump_sound.play()
 		$Sprite.play("jump")
 		velocity.y = JUMP_VELOCITY
+		
+	if Input.is_action_just_pressed("pause"):
+		get_tree().change_scene_to_file("res://mainmenu/pause.tscn")
 		
 
 		
@@ -47,7 +53,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func bounce():
-	velocity.y = JUMP_VELOCITY * 2
+	velocity.y = JUMP_VELOCITY * 3
 	$bounce.play()
 
 
@@ -62,10 +68,13 @@ func _on_coin_collector_body_entered(body):
 
 
 func _on_level_1_body_entered(body):
+	$tele.play()
 	get_tree().change_scene_to_file("res://levels/level1.tscn")
 	
 func _on_to_3_body_entered(body):
+	$tele.play()
 	get_tree().change_scene_to_file("res://levels/fin.tscn")
+
 
 
 
@@ -75,3 +84,7 @@ func _on_coin_collector_area_entered(area):
 	queue_free()
 
 
+
+
+
+	

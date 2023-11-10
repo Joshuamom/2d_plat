@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://ccbg7hxv4ocaj"]
+[gd_scene load_steps=20 format=3 uid="uid://ccbg7hxv4ocaj"]
 
 [ext_resource type="Script" path="res://levels/fin.gd" id="1_qtq6r"]
 [ext_resource type="Texture2D" uid="uid://1djygixijxfr" path="res://Assets/tilemap_packed.png" id="1_wv5kj"]
+[ext_resource type="Texture2D" uid="uid://dvsagvsre7qxq" path="res://fall.PNG" id="2_f3b8b"]
 [ext_resource type="PackedScene" uid="uid://cwoi2g3ug64ky" path="res://Player/player.tscn" id="2_hiodv"]
 [ext_resource type="PackedScene" uid="uid://c81t6s6mrcpdd" path="res://spr.tscn" id="3_ekgbs"]
 [ext_resource type="Script" path="res://Coins.gd" id="3_ot3qr"]
@@ -9,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://ccrpm16se25ww" path="res://enemy/enemy.tscn" id="4_c578t"]
 [ext_resource type="PackedScene" uid="uid://bi7lngmbcv4d" path="res://bumper.tscn" id="5_fla24"]
 [ext_resource type="AudioStream" uid="uid://c4sm525qta14r" path="res://Assets/Zane Little - Post-Adventure Tea Party.mp3" id="9_agf51"]
+[ext_resource type="Texture2D" uid="uid://dofxk8u8gy8mm" path="res://Assets/portal.PNG" id="10_jeijk"]
+[ext_resource type="AudioStream" uid="uid://ctl0uu151v2mf" path="res://150950__outroelison__teleport.mp3" id="11_qinam"]
+[ext_resource type="Script" path="res://global.gd" id="12_usjog"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ami5m"]
 texture = ExtResource("1_wv5kj")
@@ -6114,8 +6118,18 @@ physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 8
 sources/0 = SubResource("TileSetAtlasSource_qi26e")
 
-[node name="fin" type="Node2D"]
+[node name="Game" type="Node2D"]
+position = Vector2(-144, -1101)
 script = ExtResource("1_qtq6r")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -7.0
+offset_top = 64.0
+offset_right = 3149.0
+offset_bottom = 2433.0
+texture = ExtResource("2_f3b8b")
+expand_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="for" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_n23b3")
@@ -6200,3 +6214,41 @@ position = Vector2(429, 2)
 stream = ExtResource("9_agf51")
 volume_db = -0.025
 max_distance = 2e+07
+
+[node name="the end" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="the end"]
+position = Vector2(3015, 309)
+scale = Vector2(0.0772918, 0.0452083)
+texture = ExtResource("10_jeijk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="the end"]
+position = Vector2(3015, 309)
+scale = Vector2(0.0772918, 0.0452083)
+polygon = PackedVector2Array(99, -1113.9, 99, -1112.7, 166, -1100.7, 166, -1099.4, 227, -1079.4, 227, -1078.3, 288, -1050.3, 288, -1049.1, 336, -1021.1, 336, -1020, 386, -982, 386, -980.8, 421, -946.8, 421, -944.7, 457, -901.7, 457, -899.6, 498, -834.6, 498, -832.5, 538, -755.5, 538, -752.4, 576, -668.4, 576, -665.4, 619, -546.4, 619, -542.3, 642, -466.3, 642, -462.4, 655, -403.2, 655, -396, 663, -328.1, 663, -308, 664, -241, 662.9, -241, 656.9, -130, 655.8, -130, 650.8, -78, 649.7, -78, 636.7, 7, 635.7, 7, 584.7, 276, 583.5, 276, 565.6, 352, 564.5, 352, 544.5, 419, 543.4, 419, 502.4, 523, 501.2, 523, 459.2, 601, 458.1, 601, 433.1, 638, 432, 638, 401, 677, 399.9, 677, 350.9, 729, 348.8, 729, 314.8, 762, 312.7, 762, 283.7, 786, 281.6, 786, 248.6, 808, 246.5, 808, 207.5, 827, 204.3, 827, 166.3, 839, 161.4, 839, 132.2, 845, 122.1, 845, 78, 848.1, 78, 846.9, 28, 844.9, 28, 843.8, -22, 836.7, -22, 835.7, -52, 829.6, -52, 828.5, -115, 809.5, -115, 808.3, -161, 789.3, -161, 788.2, -215, 759.2, -215, 758.1, -245, 738.1, -245, 736.9, -289, 700.9, -289, 699.8, -324, 664.8, -324, 662.7, -361, 618.7, -361, 616.6, -407, 546.6, -407, 544.5, -447, 465.5, -447, 462.4, -481, 387.4, -481, 384.4, -509, 308.4, -509, 304.3, -535, 221.3, -535, 217, -552, 157.3, -552, 152.4, -568, 78.2, -568, 72, -577, 14.2, -577, 4, -581, -38.9, -581, -63, -584, -310, -583, -310, -582, -364, -580.9, -364, -576.9, -417, -575.8, -417, -568.8, -473, -567.7, -473, -555.7, -540, -554.5, -540, -536.6, -613, -535.4, -613, -508.4, -680, -507.3, -680, -489.2, -713, -488.1, -713, -462.1, -751, -460.9, -751, -398.9, -826, -397.9, -826, -349, -878.9, -349, -880.7, -330, -905.7, -330, -907.4, -322, -924.5, -322, -928, -328, -948.7, -328, -961.2, -323.6, -983, -322.2, -983, -309.2, -1009, -307.9, -1009, -286.9, -1032, -284.6, -1032, -246.6, -1059, -244.5, -1059, -219.5, -1071, -216.4, -1071, -190.3, -1080, -186, -1080, -73.2, -1106, -66.3, -1106, -6.09998, -1115, 10.9, -1115, 25, -1115.9, 25, -1117.1)
+
+[node name="tele" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_qinam")
+volume_db = 1.0
+
+[node name="can" type="CanvasLayer" parent="."]
+script = ExtResource("12_usjog")
+
+[node name="Panel" type="Panel" parent="can"]
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 132.0
+offset_bottom = 24.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="can"]
+top_level = true
+offset_left = 4.0
+offset_top = -1.0
+offset_right = 248.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Score: "
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_shape_entered" from="the end" to="." method="_on_the_end_body_shape_entered"]

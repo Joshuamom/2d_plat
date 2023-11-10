@@ -1,12 +1,14 @@
-[gd_scene load_steps=21 format=3 uid="uid://cwoi2g3ug64ky"]
+[gd_scene load_steps=23 format=3 uid="uid://cwoi2g3ug64ky"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_kmhj4"]
 [ext_resource type="Texture2D" uid="uid://d2wf48m0b2wde" path="res://Assets/cat.png" id="2_l81uj"]
+[ext_resource type="Script" path="res://Player/Camera2D.gd" id="3_84qwy"]
 [ext_resource type="AudioStream" uid="uid://crs6j8tegk8lp" path="res://386658__jalastram__sfx_jump_39.wav" id="3_125cb"]
 [ext_resource type="AudioStream" uid="uid://bs6718kpkb8vb" path="res://Assets/404769__owlstorm__retro-video-game-sfx-bounce.wav" id="3_lpdhi"]
 [ext_resource type="AudioStream" uid="uid://mxnn74xe3qvs" path="res://547854__sieuamthanh__trungquat2.wav" id="4_j8sh3"]
 [ext_resource type="AudioStream" uid="uid://bx8lhqyc15lj2" path="res://146723__leszek_szary__coin-object.wav" id="5_pwbxe"]
 [ext_resource type="AudioStream" uid="uid://so2ah3cbfjvi" path="res://Assets/Komiku - Tetros Arcade Cabinet.mp3" id="7_4168q"]
+[ext_resource type="AudioStream" uid="uid://ctl0uu151v2mf" path="res://150950__outroelison__teleport.mp3" id="8_6dkv2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbslr"]
 atlas = ExtResource("2_l81uj")
@@ -122,6 +124,7 @@ shape = SubResource("RectangleShape2D_6pc28")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -4)
+script = ExtResource("3_84qwy")
 
 [node name="Coin_Collector" type="Area2D" parent="."]
 collision_layer = 8
@@ -145,6 +148,10 @@ stream = ExtResource("3_125cb")
 
 [node name="cave" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_4168q")
+
+[node name="tele" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_6dkv2")
+volume_db = 1.0
 
 [connection signal="area_entered" from="Coin_Collector" to="." method="_on_coin_collector_area_entered"]
 [connection signal="body_entered" from="Coin_Collector" to="." method="_on_coin_collector_body_entered"]

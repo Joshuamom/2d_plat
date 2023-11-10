@@ -1,0 +1,9 @@
+~ start
+
+mimi: man what a nice walk in the city... whats that portal over there?
+- best check it out
+mimi: wait who are you
+- im the player... now lets check it out
+	mimi: okay => END
+
+=> END

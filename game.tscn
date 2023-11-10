@@ -1,16 +1,17 @@
-[gd_scene load_steps=22 format=3 uid="uid://bkcuj8xu6bity"]
+[gd_scene load_steps=23 format=3 uid="uid://bkcuj8xu6bity"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_dljxt"]
 [ext_resource type="Texture2D" uid="uid://d3h4l8ekm2irn" path="res://Assets/backgroundEmpty.png" id="1_foewg"]
 [ext_resource type="Texture2D" uid="uid://1djygixijxfr" path="res://Assets/tilemap_packed.png" id="2_48wi4"]
 [ext_resource type="PackedScene" uid="uid://cwoi2g3ug64ky" path="res://Player/player.tscn" id="4_llk57"]
-[ext_resource type="Texture2D" uid="uid://67e5y2k8oreh" path="res://icon.svg" id="6_8ntdv"]
+[ext_resource type="Texture2D" uid="uid://dofxk8u8gy8mm" path="res://Assets/portal.PNG" id="5_2hf6s"]
 [ext_resource type="Script" path="res://Coins.gd" id="7_3mmld"]
 [ext_resource type="Script" path="res://global.gd" id="7_3otn5"]
 [ext_resource type="Script" path="res://UI/HUD.gd" id="8_2hda6"]
 [ext_resource type="AudioStream" uid="uid://b410scvp3ymhq" path="res://Assets/HoliznaCC0 - Day Dreams.mp3" id="10_njqvq"]
 [ext_resource type="AudioStream" uid="uid://so2ah3cbfjvi" path="res://Assets/Komiku - Tetros Arcade Cabinet.mp3" id="11_c0k05"]
 [ext_resource type="PackedScene" uid="uid://dwi3pw1qe5uw6" path="res://enemy/worm.tscn" id="11_n3ta7"]
+[ext_resource type="PackedScene" uid="uid://c5yq36rcna33q" path="res://mainmenu/pause.tscn" id="12_em7i5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kanul"]
 texture = ExtResource("2_48wi4")
@@ -7841,7 +7842,7 @@ sources/0 = SubResource("TileSetAtlasSource_ck8fw")
 script = ExtResource("1_dljxt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1805, 83.5)
+position = Vector2(1810, 75)
 scale = Vector2(3.63477, 1.16309)
 texture = ExtResource("1_foewg")
 
@@ -7870,13 +7871,13 @@ format = 2
 layer_0/tile_data = PackedInt32Array(1376295, 1048576, 27, 1376296, 1048576, 27, 1376297, 1048576, 27, 1376298, 1048576, 27, 1376299, 1048576, 27, 1376300, 1048576, 27, 1376301, 1048576, 27, 1376302, 1048576, 27, 1376303, 1048576, 27, 1376304, 1048576, 27, 1376305, 1048576, 27, 1376306, 1048576, 27, 1376307, 1048576, 27, 1310790, 1048576, 27, 1310791, 1048576, 27, 1310792, 1048576, 27, 1114186, 1048576, 27, 1114187, 1048576, 27, 1048652, 1048576, 27, 1048653, 1048576, 27, 1048587, 1048576, 27, 1048588, 1048576, 27, 1048589, 1048576, 27, 1048590, 1048576, 27, 1245199, 1048576, 27, 1245200, 1048576, 27, 1245201, 1048576, 27)
 
 [node name="level1" type="Area2D" parent="."]
-position = Vector2(365, -292)
+position = Vector2(364, -293)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="level1"]
-position = Vector2(816.5, 588.25)
-scale = Vector2(0.164063, 0.175781)
-texture = ExtResource("6_8ntdv")
+position = Vector2(813, 586.5)
+scale = Vector2(0.0475001, 0.0254167)
+texture = ExtResource("5_2hf6s")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="level1"]
 position = Vector2(816.5, 588.25)
@@ -7911,12 +7912,15 @@ script = ExtResource("8_2hda6")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("11_n3ta7")]
-position = Vector2(67, 555)
+position = Vector2(181, 138)
 
 [node name="city" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_njqvq")
 
 [node name="cave" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_c0k05")
+
+[node name="Pause" parent="." instance=ExtResource("12_em7i5")]
+visible = false
 
 [connection signal="body_entered" from="level1" to="Player" method="_on_level_1_body_entered"]
