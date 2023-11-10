@@ -11,7 +11,7 @@ a simple platformer in godot
 
 ## Implementation
 built with Godot 4.1
-sprites of backgrounds:
+sprites of background:
 background redux by kenny.nl
 https://www.kenney.nl/assets/background-elements-redux
 
@@ -34,9 +34,18 @@ https://freesound.org/people/Leszek_Szary/sounds/146723/
 
 bounce sound
 
+by jalastram
+
+teleport sound:
+by outroelison:
+https://freesound.org/people/outroelison/sounds/150950/
+
 font: sunday mango: kuhrusan
 
 https://www.dafont.com/sunday-mango.font
+
+win music by EVRetro:
+https://freesound.org/people/EVRetro/sounds/495005/
 
 Tetros Arcade Cabinet by komiku
 https://freemusicarchive.org/music/Komiku/Poupis_incredible_adventures_/Komiku_-_Poupis_incredible_adventures__-_27_Tetros_Arcade_Cabinet/
@@ -51,12 +60,22 @@ Post-Adventure Tea Party by Zane Little
 
 https://freemusicarchive.org/music/zane-little/a-bag-of-chips/post-adventure-tea-party/
 
+stuff I added:
+made my own player sprite, made the final level background
+
 
 ## What Makes this a Game?
 
 2d platfomer aespects
 
 ## References
+I added:
+3 levels,
+2 enemies a bat and ghost,
+big levels,
+added sound for win, jump etc,
+added a spring to bounce on
+
 
 ## Future Development
 
@@ -67,3 +86,5 @@ will try to add enemy movemt, for now im more adding the enemies as obstecals an
 ## Created by
 
 Joshua Mom
+
+
