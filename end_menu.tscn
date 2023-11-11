@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqw44xffthb7g"]
+[gd_scene load_steps=7 format=3 uid="uid://cqw44xffthb7g"]
 
 [ext_resource type="Theme" uid="uid://knkujx4ux6ya" path="res://mainmenu/main_menu.tres" id="1_fee5r"]
 [ext_resource type="Script" path="res://end_menu.gd" id="1_lbp4p"]
 [ext_resource type="FontFile" uid="uid://vs1ggehkh07m" path="res://Assets/Sunday Mango.ttf" id="1_rm0w0"]
+[ext_resource type="Texture2D" uid="uid://gofxa6p3ow1m" path="res://Assets/CFGR4312.PNG" id="2_hb62s"]
 [ext_resource type="AudioStream" uid="uid://lwywdxafgcq7" path="res://495005__evretro__win-video-game-sound.wav" id="4_qr4nq"]
 [ext_resource type="AudioStream" uid="uid://djuu4ad5yodua" path="res://455202__matrixxx__select-granted-02.wav" id="5_vcqhn"]
 
@@ -15,14 +16,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lbp4p")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -78.0
+offset_right = 51.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hb62s")
+expand_mode = 1
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -48.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.333333, 0.537255, 0.996078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_rm0w0")
+theme_override_font_sizes/font_size = 50
 text = " Yay you win!!!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -64,7 +84,6 @@ stream = ExtResource("4_qr4nq")
 
 [node name="button" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_vcqhn")
-autoplay = true
 
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://csx03uqwkfrel"]
+[gd_scene load_steps=7 format=3 uid="uid://csx03uqwkfrel"]
 
 [ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_012ac"]
 [ext_resource type="Theme" uid="uid://knkujx4ux6ya" path="res://mainmenu/main_menu.tres" id="2_gqte5"]
+[ext_resource type="Texture2D" uid="uid://bdkumll3w3a28" path="res://Assets/UOXE0235.PNG" id="2_o076t"]
 [ext_resource type="FontFile" uid="uid://vs1ggehkh07m" path="res://Assets/Sunday Mango.ttf" id="2_xsedf"]
 [ext_resource type="AudioStream" uid="uid://d0ucdnwg7egne" path="res://Assets/HoliznaCC0 - Adventure Begins Loop.mp3" id="4_sph1v"]
 [ext_resource type="AudioStream" uid="uid://djuu4ad5yodua" path="res://455202__matrixxx__select-granted-02.wav" id="5_ubpnh"]
@@ -18,14 +19,19 @@ grow_vertical = 2
 size_flags_vertical = 10
 script = ExtResource("1_012ac")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = -2.0
-offset_top = -43.0
-offset_right = 1161.0
-offset_bottom = 651.0
-size_flags_horizontal = 3
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -691.0
+offset_top = -417.0
+offset_right = 575.0
+offset_bottom = 456.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_o076t")
+expand_mode = 1
 
 [node name="play" type="Button" parent="."]
 layout_mode = 1
@@ -52,31 +58,48 @@ size_flags_horizontal = 4
 theme = ExtResource("2_gqte5")
 text = "Quit"
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -528.0
-offset_top = -198.0
-offset_right = 528.0
-offset_bottom = -16.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_xsedf")
-text = "mewo's Adventure"
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 0
-visible_ratio = 0.0
-
 [node name="menu" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_sph1v")
 pitch_scale = 1.1
 
 [node name="button" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ubpnh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -244.0
+offset_top = -197.0
+offset_right = 230.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.968627, 0.537255, 0.196078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xsedf")
+theme_override_font_sizes/font_size = 40
+text = "mewo's adventure"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -261.0
+offset_top = -11.0
+offset_right = -103.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0.968627, 0.407843, 0.196078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xsedf")
+theme_override_font_sizes/font_size = 20
+text = "moves:
+w: forward
+esc: quit
+a: left
+d : right
+space bar: jump"
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

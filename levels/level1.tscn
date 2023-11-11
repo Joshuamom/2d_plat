@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b8f31o4xtbdqk"]
+[gd_scene load_steps=18 format=3 uid="uid://b8f31o4xtbdqk"]
 
 [ext_resource type="Script" path="res://levels/level1.gd" id="1_d5qdf"]
 [ext_resource type="PackedScene" uid="uid://cwoi2g3ug64ky" path="res://Player/player.tscn" id="2_3xmba"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dofxk8u8gy8mm" path="res://Assets/portal.PNG" id="8_t76n1"]
 [ext_resource type="AudioStream" uid="uid://so2ah3cbfjvi" path="res://Assets/Komiku - Tetros Arcade Cabinet.mp3" id="9_7dfkl"]
 [ext_resource type="AudioStream" uid="uid://ctl0uu151v2mf" path="res://150950__outroelison__teleport.mp3" id="11_2gguq"]
+[ext_resource type="Texture2D" uid="uid://b6pi1btpvflhy" path="res://Assets/CKOE3000.PNG" id="12_niwaa"]
+[ext_resource type="Texture2D" uid="uid://bb3xocd8fhacl" path="res://Assets/GFNR3583.PNG" id="13_lgac1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ii5d5"]
 texture = ExtResource("3_lte2l")
@@ -5324,5 +5326,21 @@ max_distance = 200000.0
 [node name="tele" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_2gguq")
 volume_db = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 158.0
+offset_top = -3.0
+offset_right = 253.0
+offset_bottom = 97.0
+texture = ExtResource("12_niwaa")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 98.0
+offset_top = 33.0
+offset_right = 193.0
+offset_bottom = 133.0
+texture = ExtResource("13_lgac1")
+expand_mode = 1
 
 [connection signal="body_entered" from="to3" to="Player" method="_on_to_3_body_entered"]
