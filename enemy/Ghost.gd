@@ -12,6 +12,7 @@ func _ready():
 func _physics_process(delta):
 	velocity.x = move
 	move_and_slide()
+	#yay
 	
 	if is_on_wall():
 		move = -move
