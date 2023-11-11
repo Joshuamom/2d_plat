@@ -70,18 +70,24 @@ made my own player sprite, made the final level background
 
 ## References
 I added:
-3 levels,
-2 enemies a bat and ghost,
-big levels,
-added sound for win, jump etc,
-added a spring to bounce on
+3 levels:
+2 enemies a bat and ghost ghost reset level, bat does too, but can bounce on head:
+big levels:
+added sound for win, jump , coins:
+added a spring to bounce on:
+made menu and win menu art:
+added sound to buttons:
+made menu art:
+added coins:
+added score:
+added a portal to switch to levels:
+added background music for each level:
+
 
 
 ## Future Development
 
 
-will add another level and polish it more later
-will try to add enemy movemt, for now im more adding the enemies as obstecals and the bat has a jump on top hit box and it kills them
 
 ## Created by
 
